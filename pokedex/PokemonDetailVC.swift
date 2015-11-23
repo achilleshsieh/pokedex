@@ -22,7 +22,10 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet var currentEvoImg: UIImageView!
     @IBOutlet var nextEvoImg: UIImageView!
     @IBOutlet var evoLbl: UILabel!
+    @IBOutlet weak var typeFieldLbl: UILabel!
+    @IBOutlet weak var defenseFieldLbl: UILabel!
     
+    @IBOutlet weak var segmentedCtrl: UISegmentedControl!
     
     
     var pokemon: Pokemon!
@@ -65,6 +68,35 @@ class PokemonDetailVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func segmentedChanged(sender: UISegmentedControl) {
+        
+        switch segmentedCtrl.selectedSegmentIndex {
+        case 0:
+            // when bio is selected
+            print("bio is selected")
+            typeFieldLbl.text = "Type"
+            defenseFieldLbl.text = "Defense"
+            typeLbl.text = pokemon.pokeType
+            defenseLbl.text = pokemon.pokeDefense
+            
+        case 1:
+            print("moves is selected")
+            typeFieldLbl.text = "First Move"
+            defenseFieldLbl.text = "Second Move"
+            
+            typeLbl.text = pokemon.pokeMove1
+            	defenseLbl.text = pokemon.pokeMove2
+            
+        default:
+            break
+        }
+    }
+    @IBAction func segmentChanged(sender: UISegmentedControl) {
+        
+    }
+
+    
     
     @IBAction func backBtnPressed(sender: AnyObject) {
         

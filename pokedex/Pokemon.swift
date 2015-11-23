@@ -24,6 +24,8 @@ class Pokemon {
     private var _pokeNextEvoId: String!
     private var _pokeNextEvoLvl: String!
     private var _pokemonUrl: String!
+    private var _pokeMove1: String!
+    private var _pokeMove2: String!
     
     // define external variables that connect with internal attributes. 
     // this is how we hide the attributes from outside so it is harder to 
@@ -92,7 +94,20 @@ class Pokemon {
         }
         return _pokeNextEvoLvl
     }
+    var pokeMove1: String {
+        if _pokeMove1 == nil {
+            _pokeMove1 = ""
+        }
+        return _pokeMove1
+    }
+    var pokeMove2: String {
+        if _pokeMove2 == nil {
+            _pokeMove2 = ""
+        }
+        return _pokeMove2
+    }
     
+    // initializer: preparing the object
     init(name: String, pokedexId: Int) {
         self._name = name
         self._pokeDexId = pokedexId
@@ -154,6 +169,22 @@ class Pokemon {
                 }
                 
                 // print(self._pokeType)
+                
+                if let moves = dict["moves"] as? [Dictionary<String, AnyObject>] where moves.count > 0 {
+                    
+                    
+                    //self._pokeMove1 = moves[0]["name"]
+                    
+                    if let move1 = moves[0]["name"] as? String{
+                        self._pokeMove1 = move1
+                        print(move1)
+                    }
+                    if moves.count > 1 {
+                        if let move2 = moves[1]["name"] as? String{
+                            self._pokeMove2 = move2
+                        }
+                    }
+                }
                 
                 if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
                     

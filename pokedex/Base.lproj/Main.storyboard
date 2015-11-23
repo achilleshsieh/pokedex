@@ -241,6 +241,10 @@
                                             <segment title="Moves"/>
                                         </segments>
                                         <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentChanged:" destination="cda-dS-sW5" eventType="valueChanged" id="z1M-B9-Z9B"/>
+                                            <action selector="segmentedChanged:" destination="cda-dS-sW5" eventType="valueChanged" id="UVP-FX-uME"/>
+                                        </connections>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3JP-Mq-hJR">
                                         <rect key="frame" x="0.0" y="49" width="560" height="120"/>
@@ -480,6 +484,7 @@
                     <connections>
                         <outlet property="baseAttackLbl" destination="0BZ-qB-hgk" id="Wwm-9G-cnJ"/>
                         <outlet property="currentEvoImg" destination="zUh-KZ-e04" id="W8l-KB-lLB"/>
+                        <outlet property="defenseFieldLbl" destination="rBc-uT-2zh" id="Nft-MC-PI2"/>
                         <outlet property="defenseLbl" destination="0dR-1m-sPS" id="ITF-mv-DKb"/>
                         <outlet property="evoLbl" destination="oeL-aY-98l" id="wYy-Ai-0Po"/>
                         <outlet property="heightLbl" destination="J31-E0-UWW" id="Yd1-g4-xk8"/>
@@ -488,6 +493,8 @@
                         <outlet property="nameLbl" destination="tS9-Ht-JRW" id="7cp-A9-E8b"/>
                         <outlet property="nextEvoImg" destination="sMf-Rc-5jz" id="pyq-DS-YLF"/>
                         <outlet property="pokedexIdLbl" destination="QgJ-Od-ZuM" id="nhG-UY-dVs"/>
+                        <outlet property="segmentedCtrl" destination="1SK-tE-g9Q" id="fgQ-hA-EW9"/>
+                        <outlet property="typeFieldLbl" destination="kUt-Qj-fPL" id="9VM-Hk-Bn6"/>
                         <outlet property="typeLbl" destination="oMG-Np-PXK" id="ob6-gh-bOU"/>
                         <outlet property="weightLbl" destination="5j2-LI-941" id="PrL-54-rV0"/>
                     </connections>
